@@ -15,28 +15,27 @@ class MyDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             padding: EdgeInsets.zero,
-            child: UserAccountsDrawerHeader(
-              margin: EdgeInsets.zero,
-              decoration: BoxDecoration(
-                color: Colors.red,
-              ),
-              accountName: Text("Emran Hossain"),
-              accountEmail: Text("emranhss@gmail.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage(imageUrl),
-              ),
+              child: UserAccountsDrawerHeader(
+                margin: EdgeInsets.zero,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                ),
+                accountName: Text("Emran Hossain"),
+                accountEmail: Text("emranhss@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage(imageUrl),
+                ),
 
-            ),
+              ),
           ),
           ListTile(
             leading: Icon(
               CupertinoIcons.home,
               color: Colors.black,
-            ),
+              ),
             title: Text("Home", textScaleFactor: 1.2,
             ),
           ),
-
           ListTile(
             leading: Icon(
               CupertinoIcons.profile_circled,
@@ -45,7 +44,6 @@ class MyDrawer extends StatelessWidget {
             title: Text("Profile", textScaleFactor: 1.2,
             ),
           ),
-
           ListTile(
             leading: Icon(
               CupertinoIcons.mail,
@@ -54,9 +52,9 @@ class MyDrawer extends StatelessWidget {
             title: Text("Mail", textScaleFactor: 1.2,
             ),
           ),
-
         ],
       ),
     );
   }
 }
+
