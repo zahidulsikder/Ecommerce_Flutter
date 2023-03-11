@@ -1,6 +1,5 @@
 import 'package:e_commerce/util/route.dart';
 import 'package:flutter/material.dart';
-import "package:velocity_x/velocity_x.dart";
 
 class LoginPage extends StatefulWidget {
   @override
@@ -15,23 +14,23 @@ class _LoginPageState extends State<LoginPage> {
   moveToHome(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
 
-    setState(() {
-      changeButton = true;
-    });
-    await Future.delayed(Duration(
-      seconds: 1,
-    ));
-    await Navigator.pushNamed(context, MyRoute.homeRoute);
-    setState(() {
-      changeButton = false;
-    });
-  }
+      setState(() {
+        changeButton = true;
+      });
+      await Future.delayed(Duration(
+        seconds: 1,
+      ));
+      await Navigator.pushNamed(context, MyRoute.homeRoute);
+      setState(() {
+        changeButton = false;
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: context.canvasColor,
+      color: Colors.white,
       child: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -66,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                       decoration: InputDecoration(hintText: "Enter User Name"),
                       //for Validation as like Bootstrape
-                    validator: (value) {
+                      validator: (value) {
                         if (value!.isEmpty) {
                           return "User Name can not be empty";
                         }
@@ -77,7 +76,6 @@ class _LoginPageState extends State<LoginPage> {
                         this.name = value;
                         // Reload the UI
                         setState(() {});
-                        
                       },
 
                     ),
@@ -120,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
 
                         decoration: BoxDecoration(
-                          color: context.theme.buttonColor,
+                          color: Colors.deepPurple,
                           borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 10),
                         ),
